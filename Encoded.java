@@ -1,4 +1,14 @@
-// Contributed by Siti Norlie Yana (101059) & Putri Naqibah Balqis Binti Zainol (100805)
+/*
+ * Encoded.java
+ * Putri Naqibah Balqis binti Zainol (100805)
+ * Role: Logic Developer
+ * Contribution: Implemented full logic, encoding, decoding, and shift calculation.
+ * 
+ * Siti Norlie Yana (101059) 
+ * Role: Backend Developer
+ * Contribution: Initial class structure and basic constructor.
+ * 
+ */
 
 public class Encoded {
     private String inputText;
@@ -6,7 +16,8 @@ public class Encoded {
     private String resultText;
     private final String groupID = "G06/SE-G7";
 
-    // Constructor
+    // Constructor to initialize the input text and validate it - Initial setup by
+    // Sti Norlie Yana, enhanced by Putri Naqibah Balqis
     public Encoded(String inputText) {
         if (inputText == null) {
             throw new IllegalArgumentException("Input text cannot be null");
@@ -21,23 +32,25 @@ public class Encoded {
         this.charCount = countCharacters(inputText); // Initialize character count
     }
 
-    // Method to validate input: only uppercase letters, digits, and spaces allowed
+    // Input validation method - Contributed by Putri Naqibah Balqis
     public boolean validateInput(String inputText) {
         return inputText.matches("[A-Z0-9 ]+");
     }
 
-    // Method to count non-space characters
+    // Method to count non-space characters - Contributed by Putri Naqibah Balqis
     public int countCharacters(String inputText) {
         return (int) inputText.chars().filter(c -> c != ' ').count();
     }
 
-    // Method to generate a group shift from the groupID using hashCode
+    // Method to generate a group shift from the groupID using hashCode -
+    // Contributed by Putri Naqibah Balqis
     public int generateShift() {
         int groupShift = Math.abs(groupID.hashCode()) % 10 + 1;
         return groupShift + charCount; // Final shift = group shift + character count
     }
 
-    // Method to apply a Caesar-style cipher with final shift (Encode or Decode)
+    // Method to apply a Caesar-style cipher with final shift (Encode or Decode) -
+    // Contributed by Putri Naqibah Balqis
     public String applyCipher(String inputText, int shift, boolean isDecoding) {
         StringBuilder result = new StringBuilder();
 
@@ -70,39 +83,26 @@ public class Encoded {
         return result.toString();
     }
 
-    // Method to encode the text
+    // Method to encode the text - Contributed by Putri Naqibah Balqis
     public String encode() {
         int shift = generateShift();
         resultText = applyCipher(inputText, shift, false);
         return resultText;
     }
 
-    // Method to decode the text
+    // Method to decode the text - Contributed by Putri Naqibah Balqis
     public String decode() {
         int shift = generateShift();
         resultText = applyCipher(inputText, shift, true);
         return resultText;
     }
 
-    // Method to print the encoded or decoded result
-    public void printResult(boolean isDecoding) {
-        int shift = generateShift();
-        resultText = applyCipher(inputText, shift, isDecoding);
-
-        if (isDecoding) {
-            System.out.println("Decoded Text: " + resultText);
-        } else {
-            System.out.println("Encoded Text: " + resultText);
-        }
-        System.out.println("Final Shift: " + shift);
-    }
-
-    // Getter for result text (for GUI usage)
+    // Getter for result text (for GUI usage) - Contributed by Putri Naqibah Balqis
     public String getResultText() {
         return resultText;
     }
 
-    // Getter for final shift (for GUI usage)
+    // Getter for final shift (for GUI usage) - Contributed by Putri Naqibah Balqis
     public int getFinalShift() {
         return generateShift();
     }

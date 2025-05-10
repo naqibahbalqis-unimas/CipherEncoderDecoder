@@ -1,5 +1,9 @@
-// Unit tests - Accuracy of encoding and decoding
-// Contributed by Rawaidatul Aliah binti Mohd Rawawi (97787)
+/*
+ * CipherTest.java
+ * Unit tests - Accuracy of encoding and decoding
+ * Contributed by Rawaidatul Aliah binti Mohd Rawawi (97787)
+ * Role: Unit Tester & Calculation Developer/Verifier 
+ */
 
 public class CipherTest {
 

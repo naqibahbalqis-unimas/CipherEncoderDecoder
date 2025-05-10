@@ -1,5 +1,14 @@
-// GUI for the Cipher Encoder/Decoder
-// Contributed by Calvin Joseph Param (98387)
+/*
+ * JavaAssignmentGUI.java
+ * Calvin Joseph Param (98387)
+ * Role: GUI Developer
+ * Contribution: Created the GUI layout and integrated it with the logic.
+ * 
+ *  Putri Naqibah Balqis binti Zainol (100805)
+ *  Role: Logic Developer
+ *  Contribution: Assisted with minor GUI enhancements, functionality improvements, input validation, and logic integration.
+ */
+
 
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
@@ -17,11 +26,11 @@ public class JavaAssignmentGUI {
     }
 
     private static void createAndShowGUI() {
-        JFrame frame = new JFrame("G06/SE-G7 - Cipher Encoder");
+        JFrame frame = new JFrame("Cipher Encoder/Decoder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(650, 450);
 
-        // Panels
+        // Panels - Contributed by Calvin Joseph Param
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
@@ -31,7 +40,7 @@ public class JavaAssignmentGUI {
 
         JPanel bottomButtons = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
-        // Components
+        // Components - Contributed by Calvin Joseph Param
         JLabel title = new JLabel("Enter text to encode or decode:", JLabel.CENTER);
         title.setFont(new Font("SansSerif", Font.BOLD, 16));
 
@@ -40,6 +49,8 @@ public class JavaAssignmentGUI {
         infoLabel.setForeground(Color.GRAY);
 
         JTextField inputField = new JTextField();
+
+        // Enhanced input validation and added automatic uppercase conversion - Contributed by Putri Naqibah Balqis
         ((AbstractDocument) inputField.getDocument()).setDocumentFilter(new UppercaseDocumentFilter());
         inputField.setFont(new Font("SansSerif", Font.PLAIN, 16));
         inputField.setToolTipText("Enter UPPERCASE letters (A-Z), digits (0-9), and spaces");
@@ -76,7 +87,7 @@ public class JavaAssignmentGUI {
 
         JScrollPane scrollPane = new JScrollPane(resultArea);
 
-        // Layout setup
+        // Layout setup - Contributed by Calvin Joseph Param
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.gridx = 0;
@@ -101,7 +112,7 @@ public class JavaAssignmentGUI {
         gbc.gridy++;
         inputPanel.add(bottomButtons, gbc);
 
-        // Add panels
+        // Add panels - Contributed by Calvin Joseph Param
         panel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
         panel.add(inputPanel, BorderLayout.NORTH);
         panel.add(scrollPane, BorderLayout.CENTER);
@@ -109,7 +120,7 @@ public class JavaAssignmentGUI {
         frame.add(panel);
         frame.setVisible(true);
 
-        // Action Listeners
+        // Action Listeners - Contributed by Calvin Joseph Param
         encodeButton.addActionListener((ActionEvent e) -> {
             String text = inputField.getText().trim();
             if (text.isEmpty()) {
@@ -155,7 +166,7 @@ public class JavaAssignmentGUI {
         copyButton.addActionListener((ActionEvent e) -> {
             String output = resultArea.getText();
             if (!output.isEmpty()) {
-                // Extract only the encoded or decoded text from the result area
+                // Extract only the encoded or decoded text from the result area -  Contributed by Calvin Joseph Param
                 String[] lines = output.split("\n");
                 String encodedText = "";
                 for (String line : lines) {
@@ -185,6 +196,7 @@ public class JavaAssignmentGUI {
         });
     }
 
+    // DocumentFilter to restrict input to uppercase letters, digits, and spaces - Contributed by Putri Naqibah Balqis
     private static class UppercaseDocumentFilter extends DocumentFilter {
         @Override
         public void insertString(FilterBypass fb, int offset, String text, AttributeSet attr)
