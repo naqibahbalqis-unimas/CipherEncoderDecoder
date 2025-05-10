@@ -1,0 +1,28 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Current File",
+			"request": "launch",
+			"mainClass": "${file}"
+		},
+		{
+			"type": "java",
+			"name": "CipherTest",
+			"request": "launch",
+			"mainClass": "CipherTest",
+			"projectName": "java_assignment1_be5c9016"
+		},
+		{
+			"type": "java",
+			"name": "JavaAssignmentGUI",
+			"request": "launch",
+			"mainClass": "JavaAssignmentGUI",
+			"projectName": "java_assignment1_be5c9016"
+		}
+	]
+}
