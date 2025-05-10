@@ -1,9 +1,10 @@
-// JavaCipher - Enhanced Logic with Decoding
+// Contributed by Siti Norlie Yana (101059) & Putri Naqibah Balqis Binti Zainol (100805)
+
 public class Encoded {
     private String inputText;
     private int charCount;
     private String resultText;
-    private final String groupID = "G06/SE-G7"; // Programme-GroupNumber
+    private final String groupID = "G06/SE-G7";
 
     // Constructor
     public Encoded(String inputText) {
@@ -30,7 +31,7 @@ public class Encoded {
         return (int) inputText.chars().filter(c -> c != ' ').count();
     }
 
-    // Method to generate a group-specific shift from the groupID using hashCode
+    // Method to generate a group shift from the groupID using hashCode
     public int generateShift() {
         int groupShift = Math.abs(groupID.hashCode()) % 10 + 1;
         return groupShift + charCount; // Final shift = group shift + character count
@@ -40,7 +41,7 @@ public class Encoded {
     public String applyCipher(String inputText, int shift, boolean isDecoding) {
         StringBuilder result = new StringBuilder();
 
-        // Calculate the appropriate shifts for letters and digits
+        // Calculate the shifts for letters and digits
         int letterShift = shift % 26;
         int digitShift = shift % 10;
 
@@ -61,7 +62,7 @@ public class Encoded {
                 char shifted = (char) ((c - '0' + digitShift) % 10 + '0');
                 result.append(shifted);
             }
-            // Spaces (unchanged)
+            // Spaces
             else if (c == ' ') {
                 result.append(c);
             }

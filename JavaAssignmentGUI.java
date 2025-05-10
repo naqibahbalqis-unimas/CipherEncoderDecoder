@@ -1,3 +1,6 @@
+// GUI for the Cipher Encoder/Decoder
+// Contributed by Calvin Joseph Param (98387)
+
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.BadLocationException;

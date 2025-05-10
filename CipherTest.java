@@ -1,4 +1,5 @@
-//Unit tests - Accuracy of encoding and decoding
+// Unit tests - Accuracy of encoding and decoding
+// Contributed by Rawaidatul Aliah binti Mohd Rawawi (97787)
 
 public class CipherTest {
 
@@ -7,9 +8,9 @@ public class CipherTest {
         testEncodingDecoding("1234567890");
         testEncodingDecoding("A1B2C3D4E5");
         testEncodingDecoding("TEST CASE WITH SPACE");
-        testInvalidInput("hello");             // lowercase
-        testInvalidInput("INVALID!@#");        // symbols
-        testEmptyInput();                      // null or empty
+        testInvalidInput("hello"); // lowercase
+        testInvalidInput("INVALID!@#"); // symbols
+        testEmptyInput(); // null or empty
     }
 
     private static void testEncodingDecoding(String input) {
