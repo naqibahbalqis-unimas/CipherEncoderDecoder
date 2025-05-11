@@ -19,10 +19,10 @@ import java.awt.*;
 import java.awt.datatransfer.*;
 import java.awt.event.ActionEvent;
 
-public class JavaAssignmentGUI {
+public class GUI {
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(JavaAssignmentGUI::createAndShowGUI);
+        SwingUtilities.invokeLater(GUI::createAndShowGUI);
     }
 
     private static void createAndShowGUI() {
