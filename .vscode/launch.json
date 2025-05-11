@@ -6,6 +6,20 @@
 	"configurations": [
 		{
 			"type": "java",
+			"name": "Assignment",
+			"request": "launch",
+			"mainClass": "Assignment",
+			"projectName": "java_assignment1_be5c9016"
+		},
+		{
+			"type": "java",
+			"name": "GUI",
+			"request": "launch",
+			"mainClass": "GUI",
+			"projectName": "java_assignment1_be5c9016"
+		},
+		{
+			"type": "java",
 			"name": "Current File",
 			"request": "launch",
 			"mainClass": "${file}"

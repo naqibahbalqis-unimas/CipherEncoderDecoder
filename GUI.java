@@ -9,7 +9,6 @@
  *  Contribution: Assisted with minor GUI enhancements, functionality improvements, input validation, and logic integration.
  */
 
-
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.BadLocationException;
@@ -21,11 +20,8 @@ import java.awt.event.ActionEvent;
 
 public class GUI {
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(GUI::createAndShowGUI);
-    }
 
-    private static void createAndShowGUI() {
+    public static void createAndShowGUI() {
         JFrame frame = new JFrame("Cipher Encoder/Decoder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(650, 450);
